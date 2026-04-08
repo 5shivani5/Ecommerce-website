@@ -11,7 +11,7 @@ function EditCategory() {
   const [statusMessage, setStatusMessage] = useState("");
   const [statusType, setStatusType] = useState(""); // "success" | "error"
 
-  // ✅ Fetch category
+  //  Fetch category
   useEffect(() => {
     const fetchCategory = async () => {
       try {
@@ -21,7 +21,7 @@ function EditCategory() {
         setCategory(res.data);
       } catch (err) {
         console.error(err);
-        setStatusMessage("❌ Failed to load category");
+        setStatusMessage(" Failed to load category");
         setStatusType("error");
       }
     };
@@ -38,11 +38,11 @@ function EditCategory() {
       await axios.put(`http://localhost:8082/categories/${id}`, category, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
-      setStatusMessage("✅ Category updated successfully!");
+      setStatusMessage(" Category updated successfully!");
       setStatusType("success");
     } catch (err) {
       console.error(err);
-      setStatusMessage(err.response?.data || "❌ Update failed");
+      setStatusMessage(err.response?.data || " Update failed");
       setStatusType("error");
     }
   };
