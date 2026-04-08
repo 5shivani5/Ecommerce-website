@@ -3,7 +3,7 @@ import { jwtDecode } from "jwt-decode";
 
 const BASE_URL = "http://localhost:8083/payment";
 
-// ✅ COMMON AUTH HEADER
+//  COMMON AUTH HEADER
 const getAuthHeaders = () => {
   const token = localStorage.getItem("token");
 
@@ -14,7 +14,7 @@ const getAuthHeaders = () => {
   };
 };
 
-// ✅ GET USER FROM TOKEN
+//  GET USER FROM TOKEN
 const getUser = () => {
   const token = localStorage.getItem("token");
 
@@ -30,7 +30,7 @@ const getUser = () => {
 
 const paymentApi = {
 
-  // ✅ GET WALLET BALANCE
+  //  GET WALLET BALANCE
   getWalletBalance: async () => {
     const { userId } = getUser();
 
@@ -42,7 +42,7 @@ const paymentApi = {
     return res.data;
   },
 
-  // ✅ MAKE PAYMENT (CORRECTED)
+  //  MAKE PAYMENT (CORRECTED)
   makePayment: async (amount, orderId) => {
     const { userId } = getUser();
 
@@ -51,18 +51,18 @@ const paymentApi = {
       null,
       {
         params: {
-          userId,     // ✅ FIXED (was username ❌)
+          userId,     //  FIXED (was username ❌)
           amount,
-          orderId,    // ✅ dynamic (not hardcoded)
+          orderId,    //  dynamic (not hardcoded)
         },
-        ...getAuthHeaders(), // ✅ include JWT
+        ...getAuthHeaders(), //  include JWT
       }
     );
 
     return res.data;
   },
 
-  // ✅ ADMIN: ADD MONEY
+  // ADMIN: ADD MONEY
   addMoneyToUser: async (userId, amount) => {
     const res = await axios.post(
       `${BASE_URL}/add`,
