@@ -3,14 +3,14 @@ import { jwtDecode } from "jwt-decode";
 
 const BASE_URL = "http://localhost:8084/api/address";
 
-// ✅ Get userId from token
+//  Get userId from token
 const getUserId = () => {
   const token = localStorage.getItem("token");
   if (!token) throw new Error("No token");
   return jwtDecode(token).userId;
 };
 
-// ✅ Get auth headers
+// Get auth headers
 const getAuthHeaders = () => {
   const token = localStorage.getItem("token");
 
@@ -22,7 +22,7 @@ const getAuthHeaders = () => {
 };
 
 const addressApi = {
-  // ✅ Get all saved addresses
+  //  Get all saved addresses
   getAddresses: async () => {
     const userId = getUserId();
 
@@ -34,7 +34,7 @@ const addressApi = {
     return res.data;
   },
 
-  // ✅ Add a new address
+  //  Add a new address
   addAddress: async (addressData) => {
     const userId = getUserId();
 
@@ -47,7 +47,7 @@ const addressApi = {
     return res.data;
   },
 
-  // ✅ Set default address
+  //  Set default address
   setDefault: async (addressId) => {
     const userId = getUserId();
 
@@ -60,7 +60,7 @@ const addressApi = {
     return res.data;
   },
 
-  // ✅ Delete address
+  //  Delete address
   deleteAddress: async (addressId) => {
     const userId = getUserId();
 
