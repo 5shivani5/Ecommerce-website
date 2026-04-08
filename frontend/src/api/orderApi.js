@@ -23,7 +23,7 @@ const getAuthHeaders = () => {
 };
 
 const orderApi = {
-  // ✅ PLACE ORDER
+  //  PLACE ORDER
   placeOrder: async (orderData) => {
     const { userId, username } = getUserDetails();
 
@@ -40,7 +40,7 @@ const orderApi = {
     return res.data;
   },
 
-  // ✅ 🔥 ADD THIS (MAIN FIX)
+  //  ADD THIS (MAIN FIX)
   getUserOrders: async () => {
     const { userId } = getUserDetails();
 
@@ -52,10 +52,10 @@ const orderApi = {
     return res.data;
   },
 
-  // ✅ OPTIONAL (you already use this in Orders.jsx)
+  //  OPTIONAL (you already use this in Orders.jsx)
  cancelOrder: async (orderId) => {
    const res = await axios.put(
-     `${BASE_URL}/${orderId}/cancel`,   // ✅ FIXED ORDER
+     `${BASE_URL}/${orderId}/cancel`,   //  FIXED ORDER
      {},
      getAuthHeaders()
    );
