@@ -24,7 +24,7 @@ function AddCategory() {
         },
       });
 
-      setStatusMessage("✅ Category added successfully!");
+      setStatusMessage("Category added successfully!");
       setStatusType("success");
       setCategory({ name: "" }); // clear input
       // Optional: navigate after a delay if desired
@@ -32,7 +32,7 @@ function AddCategory() {
 
     } catch (err) {
       console.error(err);
-      setStatusMessage("❌ Failed to add category");
+      setStatusMessage("Failed to add category");
       setStatusType("error");
     }
   };
