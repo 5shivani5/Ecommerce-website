@@ -15,20 +15,20 @@ export default function AdminWallet() {
     e.preventDefault();
 
     if (!userId || !amount) {
-      setStatusMessage("❌ Please fill all fields");
+      setStatusMessage(" Please fill all fields");
       setStatusType("error");
       return;
     }
 
     try {
       await paymentApi.addMoneyToUser(userId, amount);
-      setStatusMessage(`✅ ₹${amount} added to user ${userId}`);
+      setStatusMessage(` ₹${amount} added to user ${userId}`);
       setStatusType("success");
       setUserId("");
       setAmount("");
     } catch (err) {
       console.error(err);
-      setStatusMessage(err.response?.data || "❌ Failed to add money");
+      setStatusMessage(err.response?.data || " Failed to add money");
       setStatusType("error");
     }
   };
