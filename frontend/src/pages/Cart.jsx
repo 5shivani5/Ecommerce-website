@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ added
+import { useNavigate } from "react-router-dom"; //  added
 import cartApi from "../api/cartApi";
 import bgImage from "../assets/background.png";
 
@@ -20,7 +20,7 @@ export default function Cart() {
   const [loading, setLoading] = useState(true);
   const [toast, setToast] = useState("");
 
-  const navigate = useNavigate(); // ✅ added
+  const navigate = useNavigate(); //  added
 
   const showToast = useCallback((msg) => {
     setToast(msg);
@@ -86,7 +86,7 @@ export default function Cart() {
   };
 
    const handleCheckout = () => {
-      navigate("/payment", { state: { amount: grand, items: cart   } }); // ✅ send total
+      navigate("/payment", { state: { amount: grand, items: cart   } }); //  send total
     };
 
 
@@ -159,7 +159,7 @@ export default function Cart() {
               <h3>Total: ₹{fmt(grand)}</h3>
 
               <div style={styles.summaryButtons}>
-                {/* ✅ Updated */}
+                {/*  Updated */}
                 <button style={styles.checkout} onClick={handleCheckout}>
                   Checkout
                 </button>
