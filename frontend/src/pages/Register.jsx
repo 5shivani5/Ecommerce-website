@@ -15,21 +15,21 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    // ✅ Frontend validation
+    //  Frontend validation
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
 
     try {
-      // ✅ Logic: Sending all required fields to API
+      //  Logic: Sending all required fields to API
       const data = await registerUser({
         username,
         password,
         confirmPassword
       });
 
-      // ✅ Logic: Auto-login after registration using Context
+      //  Logic: Auto-login after registration using Context
       if (data.token) {
         login(data.token);
         localStorage.setItem("username", username);
