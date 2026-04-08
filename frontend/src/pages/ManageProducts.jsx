@@ -9,7 +9,7 @@ function ManageProducts() {
   const [statusType, setStatusType] = useState(""); // 'success' | 'error'
   const navigate = useNavigate();
 
-  // ✅ Fetch all products
+  //  Fetch all products
   const fetchProducts = async () => {
     try {
       const res = await axios.get("http://localhost:8082/products", {
@@ -20,7 +20,7 @@ function ManageProducts() {
       setProducts(res.data);
     } catch (err) {
       console.error("Fetch error:", err);
-      setStatusMessage("❌ Failed to fetch products (Unauthorized or Server error)");
+      setStatusMessage(" Failed to fetch products (Unauthorized or Server error)");
       setStatusType("error");
     }
   };
@@ -29,7 +29,7 @@ function ManageProducts() {
     fetchProducts();
   }, []);
 
-  // ✅ Delete product
+  //  Delete product
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8082/products/${id}`, {
@@ -38,12 +38,12 @@ function ManageProducts() {
         },
       });
 
-      setStatusMessage("✅ Product deleted successfully!");
+      setStatusMessage(" Product deleted successfully!");
       setStatusType("success");
       fetchProducts();
     } catch (err) {
       console.error("Delete error:", err);
-      setStatusMessage("❌ Delete failed (Unauthorized or Server error)");
+      setStatusMessage(" Delete failed (Unauthorized or Server error)");
       setStatusType("error");
     }
   };
@@ -62,7 +62,7 @@ function ManageProducts() {
           + Add Product
         </button>
 
-        {/* ✅ Display status message */}
+        {/*  Display status message */}
         {statusMessage && (
           <div
             style={{
