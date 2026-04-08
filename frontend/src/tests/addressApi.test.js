@@ -5,7 +5,7 @@ jest.mock("axios");
 
 const MOCK_USER_ID = 101;
 
-// ✅ Mock jwtDecode
+//  Mock jwtDecode
 jest.mock("jwt-decode", () => ({
   jwtDecode: () => ({ userId: MOCK_USER_ID }),
 }));
