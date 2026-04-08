@@ -21,7 +21,7 @@ function EditProduct() {
   const [statusMessage, setStatusMessage] = useState("");
   const [statusType, setStatusType] = useState(""); // 'success' | 'error'
 
-  // ✅ Fetch product with JWT
+  //  Fetch product with JWT
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -35,7 +35,7 @@ function EditProduct() {
         setProduct(res.data);
       } catch (err) {
         console.error(err);
-        setStatusMessage("❌ Failed to load product (check your login/role)");
+        setStatusMessage(" Failed to load product (check your login/role)");
         setStatusType("error");
       }
     };
@@ -43,13 +43,13 @@ function EditProduct() {
     fetchProduct();
   }, [id]);
 
-  // ✅ Handle input changes
+  //  Handle input changes
   const handleChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
     setStatusMessage(""); // clear previous message
   };
 
-  // ✅ Update product with JWT
+  //  Update product with JWT
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -61,14 +61,14 @@ function EditProduct() {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      setStatusMessage("✅ Product updated successfully!");
+      setStatusMessage(" Product updated successfully!");
       setStatusType("success");
 
       // Optional: navigate after 2 seconds
       // setTimeout(() => navigate("/manage-products"), 2000);
     } catch (err) {
       console.error(err);
-      setStatusMessage("❌ Update failed. Please check your role or try again.");
+      setStatusMessage(" Update failed. Please check your role or try again.");
       setStatusType("error");
     }
   };
