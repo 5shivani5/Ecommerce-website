@@ -4,7 +4,7 @@ const BASE_URL = "http://localhost:8085/admin";
 
 const adminApi = {
 
-  // ✅ GET ALL ORDERS (WITH TOKEN 🔥)
+  //  GET ALL ORDERS (WITH TOKEN )
   getAllOrders: async () => {
     const token = localStorage.getItem("token");
 
@@ -17,7 +17,7 @@ const adminApi = {
     return res.data;
   },
 
-  // ✅ UPDATE ORDER STATUS (WITH TOKEN 🔥)
+  //  UPDATE ORDER STATUS (WITH TOKEN )
   updateOrderStatus: async (orderId, status) => {
     const token = localStorage.getItem("token");
 
