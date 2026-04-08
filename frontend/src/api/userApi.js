@@ -1,14 +1,13 @@
 import axios from "axios";
-
-// ✅ Base URL (includes /api)
+//  Base URL (includes /api)
 const BASE_URL = "http://localhost:8084/api";
 
-// ✅ Axios instance
+//  Axios instance
 export const api = axios.create({
   baseURL: BASE_URL,
 });
 
-// ✅ Attach JWT token automatically
+//  Attach JWT token automatically
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
 
@@ -22,17 +21,17 @@ api.interceptors.request.use((config) => {
 
 // ================= AUTH APIs =================
 
-// ✅ REGISTER
+//  REGISTER
 export const registerUser = async (userData) => {
   const response = await api.post("/auth/signup", userData);
   return response.data;
 };
 
-// ✅ LOGIN
+//  LOGIN
 export const loginUser = async (userData) => {
   const response = await api.post("/auth/login", userData);
 
-  // ✅ STORE TOKEN HERE
+  //  STORE TOKEN HERE
   localStorage.setItem("token", response.data.token);
 
   return response.data;
@@ -41,25 +40,25 @@ export const loginUser = async (userData) => {
 
 // ================= ADMIN APIs =================
 
-// ✅ GET USERS
+//  GET USERS
 export const getUsers = async (keyword = "") => {
   const response = await api.get(`/admin/users?keyword=${keyword}`);
   return response.data;
 };
 
-// ✅ TOGGLE USER (enable/disable)
+//  TOGGLE USER (enable/disable)
 export const toggleUser = async (id) => {
   const response = await api.put(`/admin/users/${id}/toggle`);
   return response.data;
 };
 
-// ✅ CHANGE ROLE
+//  CHANGE ROLE
 export const changeUserRole = async (id, role) => {
   const response = await api.put(`/admin/users/${id}/role?role=${role}`);
   return response.data;
 };
 
-// ✅ DELETE USER
+//  DELETE USER
 export const deleteUser = async (id) => {
   const response = await api.delete(`/admin/users/${id}`);
   return response.data;
