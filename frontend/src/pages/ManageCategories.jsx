@@ -10,7 +10,7 @@ function ManageCategories() {
   const [deleteTarget, setDeleteTarget] = useState(null); // category id to delete
   const navigate = useNavigate();
 
-  // ✅ Fetch all categories
+  //  Fetch all categories
   const fetchCategories = async () => {
     try {
       const res = await axios.get("http://localhost:8082/categories", {
@@ -20,7 +20,7 @@ function ManageCategories() {
       setStatusMessage("");
     } catch (err) {
       console.error("Fetch error:", err);
-      setStatusMessage("❌ Failed to fetch categories");
+      setStatusMessage(" Failed to fetch categories");
       setStatusType("error");
     }
   };
@@ -29,19 +29,19 @@ function ManageCategories() {
     fetchCategories();
   }, []);
 
-  // ✅ Delete category
+  // Delete category
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8082/categories/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
-      setStatusMessage("✅ Category deleted successfully!");
+      setStatusMessage(" Category deleted successfully!");
       setStatusType("success");
       setDeleteTarget(null); // hide confirmation
       fetchCategories();
     } catch (err) {
       console.error("Delete error:", err);
-      const message = err.response?.data || "❌ Delete failed";
+      const message = err.response?.data || " Delete failed";
       setStatusMessage(message);
       setStatusType("error");
     }
