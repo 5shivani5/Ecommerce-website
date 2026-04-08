@@ -35,12 +35,12 @@ function AddProduct() {
         },
       });
 
-      setStatusMessage("✅ Product added successfully!");
+      setStatusMessage(" Product added successfully!");
       // Optional: navigate after 2 seconds
       // setTimeout(() => navigate("/admin"), 2000);
     } catch (err) {
       console.error(err);
-      setStatusMessage("❌ Failed to add product. Please try again.");
+      setStatusMessage("Failed to add product. Please try again.");
     }
   };
 
