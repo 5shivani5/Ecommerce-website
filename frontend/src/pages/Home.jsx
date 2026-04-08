@@ -96,10 +96,10 @@ const styles = {
    top: 0,
    left: 0,
    right: 0,
-   height: "60px",              // ✅ FIXED HEIGHT
+   height: "60px",              //  FIXED HEIGHT
    display: "flex",
    justifyContent: "flex-end",
-   alignItems: "center",        // ✅ vertical alignment
+   alignItems: "center",        //  vertical alignment
    padding: "0 40px",
    zIndex: 2,
  },
@@ -152,7 +152,7 @@ const styles = {
     color: "#f0f0f0",
   },
   ctaButton: {
-    padding: "12px 20px",        // ✅ FIX (not 12px 0)
+    padding: "12px 20px",        //  FIX (not 12px 0)
     fontSize: "14px",
     letterSpacing: "2px",
     textTransform: "uppercase",
@@ -165,7 +165,7 @@ const styles = {
     fontFamily: "'Georgia', serif",
   },
 logoutBtn: {
-  padding: "8px 16px",         // ✅ match Login button
+  padding: "8px 16px",         //  match Login button
   fontSize: "13px",
   background: "#fff",
   color: "#000",
@@ -173,7 +173,7 @@ logoutBtn: {
   borderRadius: "2px",
   cursor: "pointer",
   fontFamily: "'Georgia', serif",
-  display: "inline-block",     // ✅ prevents weird stretching
+  display: "inline-block",     //  prevents weird stretching
 },
 };
 
