@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { AuthContext } from "../context/AuthContext";
 import { BrowserRouter } from "react-router-dom";
 
-// ✅ MOCK navigate
+//  MOCK navigate
 const mockNavigate = jest.fn();
 
 jest.mock("react-router-dom", () => ({
@@ -11,7 +11,7 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockNavigate,
 }));
 
-// ✅ Helper render
+//  Helper render
 const renderNavbar = (user = null) => {
   const mockLogout = jest.fn();
 
