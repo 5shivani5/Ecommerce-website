@@ -17,17 +17,17 @@ function AdminLogin() {
 
       console.log("Admin login response:", data);
 
-      // ✅ Role check (if backend sends role)
+      //  Role check (if backend sends role)
       if (data.role && data.role !== "ADMIN") {
         alert("Access denied: Not an admin");
         return;
       }
 
-      // ✅ Store token
+      //  Store token
       localStorage.setItem("token", data.token);
       localStorage.setItem("username", username);
 
-      // ✅ Navigate to admin dashboard
+      //  Navigate to admin dashboard
       navigate("/admin");
 
     } catch (err) {
