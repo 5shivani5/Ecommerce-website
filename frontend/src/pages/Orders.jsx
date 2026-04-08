@@ -93,7 +93,7 @@ const s = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: "60px", // ✅ adjust for navbar height
+    paddingTop: "60px", //  adjust for navbar height
     color: "#fff",
   },
 
@@ -107,7 +107,7 @@ const s = {
     padding: "40px 32px",
     textAlign: "center",
     backdropFilter: "blur(10px)",
-    // ❌ REMOVED transform: translateY(-20px)
+    //  REMOVED transform: translateY(-20px)
   },
 
   checkCircle: {
