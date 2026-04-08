@@ -26,7 +26,7 @@ export default function Payment() {
   const [newAddr, setNewAddr] = useState({ addressLine: "", city: "", state: "", pincode: "", label: "Home" });
 
   const totalAmount = location.state?.amount || 0;
-// 🔥 BULLETPROOF FIX
+//  BULLETPROOF FIX
 const rawCart = location.state?.items;
 
 const items = Array.isArray(rawCart)
@@ -142,9 +142,9 @@ const getDecodedUser = () => {
       const { userId, username } = user;
 console.log("RAW CART:", rawCart);
 console.log("FINAL ITEMS:", items);
-      // 🔥 CRITICAL FIX: FORMAT ITEMS FOR BACKEND
+      //  CRITICAL FIX: FORMAT ITEMS FOR BACKEND
       const formattedItems = items.map((item) => ({
-        productId: Number(item.productId || item.id),   // ✅ FIXES Long error
+        productId: Number(item.productId || item.id),   //  FIXES Long error
         productName: item.productName || item.name,
         brand: item.brand,
         imageUrl: item.imageUrl || null,
@@ -155,7 +155,7 @@ console.log("FINAL ITEMS:", items);
 
       console.log("FINAL ITEMS SENT:", formattedItems);
 
-      // ✅ PLACE ORDER
+      //  PLACE ORDER
       const order = await orderApi.placeOrder({
         userId,
         username,
@@ -167,7 +167,7 @@ console.log("FINAL ITEMS:", items);
         items: formattedItems,
       });
 
-      // ✅ PAYMENT
+      //  PAYMENT
       const token = localStorage.getItem("token");
 
       await axios.post(
@@ -185,7 +185,7 @@ console.log("FINAL ITEMS:", items);
         }
       );
 
-      // ✅ CLEAR CART
+      //  CLEAR CART
       try {
         await cartApi.clearCart();
       } catch {}
