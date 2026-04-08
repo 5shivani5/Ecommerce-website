@@ -164,14 +164,14 @@ const getStatusColor = (status) => {
 
 const s = {
   container: {
-    height: "100vh",              // 🔥 important (not minHeight)
+    height: "100vh",              //  important (not minHeight)
     backgroundImage: `url(${bgImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundAttachment: "fixed",
     position: "relative",
     fontFamily: "Georgia",
-    overflow: "hidden",           // 🔥 prevent full page scroll
+    overflow: "hidden",           //  prevent full page scroll
   },
   overlay: {
     position: "fixed",
@@ -185,12 +185,12 @@ const s = {
     maxWidth: 860,
     margin: "0 auto",
     color: "#fff",
-  paddingBottom: "120px",   // 🔥 ADD THIS
+  paddingBottom: "120px",   //  ADD THIS
 boxSizing: "border-box",
-    height: "100vh",              // 🔥 full height
+    height: "100vh",              // full height
     overflowY: "auto",
 
-                 scrollbarWidth: "none",// 🔥 scroll only content
+                 scrollbarWidth: "none",//  scroll only content
   },
 select: {
   padding: "6px 10px",
@@ -203,7 +203,7 @@ select: {
 },
 
 option: {
-  backgroundColor: "#111",   // 🔥 dark background
+  backgroundColor: "#111",   //  dark background
   color: "#fff",
 },
   title: {
