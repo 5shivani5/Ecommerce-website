@@ -31,7 +31,7 @@ useEffect(() => {
       setLoading(true);
      getProductsByCategory(category)
        .then((data) => {
-         console.log("API RESPONSE:", data); // 👈 ADD THIS
+         console.log("API RESPONSE:", data); // 
          setProducts(data);
          setLoading(false);
        })
@@ -47,7 +47,7 @@ useEffect(() => {
       const response = await cartApi.addToCart(product);
       console.log("Cart response:", response);
 
-      // ✅ update count
+      //  update count
       setCartCount((prev) => prev + 1);
 
     } catch (err) {
@@ -153,7 +153,7 @@ useEffect(() => {
         ) : (
           <div style={styles.grid}>
             {products.map((product) => {
-              console.log(product.imageUrl); // 👈 ADD HERE
+              console.log(product.imageUrl); 
 
               return (
                 <div key={product.productId} style={styles.productCard}>
