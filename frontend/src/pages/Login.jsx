@@ -18,23 +18,22 @@ function Login() {
        console.log("Login response:", data);
        console.log("Token:", data.token);
 
-       // ✅ Store token
+       //  Store token
        localStorage.setItem("token", data.token);
        localStorage.setItem("username", username);
 
-       // ❌ REMOVE alert
+       //  REMOVE alert
        // alert(data.message || "Login successful!");
 
-       // ✅ Redirect directly
+       //  Redirect directly
        navigate("/products");
 
      } catch (err) {
        console.error("Login error:", err);
 
-       // ❌ REMOVE alert
+       //  REMOVE alert
        // alert(err?.message || err);
-
-       // ✅ Optional: show error in UI (better)
+       //  Optional: show error in UI (better)
      }
    };
 
