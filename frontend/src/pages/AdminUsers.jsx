@@ -200,13 +200,13 @@ const styles = {
     width: "100%",
     borderCollapse: "collapse",
     color: "#fff",
-    textAlign: "center", // ✅ CENTER ALL TEXT
+    textAlign: "center", //  CENTER ALL TEXT
   },
 
   actions: {
     display: "flex",
-    justifyContent: "center", // ✅ CENTER HORIZONTALLY
-    alignItems: "center",     // ✅ CENTER VERTICALLY
+    justifyContent: "center", //  CENTER HORIZONTALLY
+    alignItems: "center",     //  CENTER VERTICALLY
     gap: "6px",
     flexWrap: "wrap",
   },
