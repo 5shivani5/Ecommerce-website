@@ -1,4 +1,4 @@
-// ✅ STEP 1: Mock axios FIRST (top of file)
+//  STEP 1: Mock axios FIRST (top of file)
 jest.mock("axios", () => {
   const mockAxiosInstance = {
     post: jest.fn(),
@@ -17,7 +17,7 @@ jest.mock("axios", () => {
   };
 });
 
-// ✅ STEP 2: Now import AFTER mock
+// STEP 2: Now import AFTER mock
 import {
   registerUser,
   loginUser,
